@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CarMovement : MonoBehaviour
 {
-    public Transform centerOfMass;
-    
     public WheelCollider WheelColliderFrontLeft;
     public WheelCollider WheelColliderFrontRight;
     public WheelCollider WheelColliderBackLeft;
@@ -19,8 +17,6 @@ public class CarMovement : MonoBehaviour
     public float motorTorque = 100f;
     public float maxSteerAngle = 20f;
 
-    private Rigidbody _rigidbody;
-    
     private void Awake()
     {
         
@@ -28,8 +24,7 @@ public class CarMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        //_rigidbody.centerOfMass = centerOfMass.localPosition;
+
     }
     
     private void FixedUpdate()
@@ -45,15 +40,12 @@ public class CarMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //turning the wheels
         var pos = Vector3.zero;
         var rot = Quaternion.identity;
-
         WheelColliderFrontLeft.GetWorldPose(out pos, out rot);
-        //wheelFrontLeft.position = pos;
         wheelFrontLeft.rotation = rot;
-        
         WheelColliderFrontRight.GetWorldPose(out pos, out rot);
-        //wheelFrontRight.position = pos;
         wheelFrontRight.rotation = rot;
     }
 }
