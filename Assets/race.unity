@@ -477,16 +477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5756a74b84d85cb4cb87a7ca3d3cc253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WheelColliderLeftFront: {fileID: 1689401181}
-  WheelColliderRightFront: {fileID: 658329634}
-  WheelColliderLeftBack: {fileID: 731908701}
-  WheelColliderRightBack: {fileID: 510372436}
-  wheelLeftFront: {fileID: 103361210}
-  wheelRightFront: {fileID: 1735779923}
-  wheelLeftBack: {fileID: 2078973251}
-  wheelRightBack: {fileID: 1988454395}
+  WheelColliderFrontLeft: {fileID: 1689401181}
+  WheelColliderFrontRight: {fileID: 658329634}
+  WheelColliderBackLeft: {fileID: 731908701}
+  WheelColliderBackRight: {fileID: 510372436}
+  wheelFrontLeft: {fileID: 103361210}
+  wheelFrontRight: {fileID: 1735779923}
+  wheelBackLeft: {fileID: 2078973251}
+  wheelBackRight: {fileID: 1988454395}
   motorTorque: 100
-  maxSteer: 20
+  maxSteerAngle: 20
 --- !u!1001 &257560525
 PrefabInstance:
   m_ObjectHideFlags: 0

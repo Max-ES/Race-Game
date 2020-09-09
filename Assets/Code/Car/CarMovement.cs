@@ -15,7 +15,7 @@ public class CarMovement : MonoBehaviour
     public Transform wheelBackRight;
 
     public float motorTorque = 100f;
-    public float maxSteer = 20f;
+    public float maxSteerAngle = 20f;
     
     private void Awake()
     {
@@ -29,9 +29,12 @@ public class CarMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
+        // controls the speed
         WheelColliderBackLeft.motorTorque = Input.GetAxis("Vertical") * motorTorque;
         WheelColliderBackRight.motorTorque = Input.GetAxis("Vertical") * motorTorque;
-        
+        //controls the direction
+        WheelColliderFrontLeft.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
+        WheelColliderFrontRight.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
     }
 
     // Update is called once per frame
