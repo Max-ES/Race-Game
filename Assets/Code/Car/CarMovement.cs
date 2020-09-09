@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CarMovement : MonoBehaviour
 {
-    public WheelCollider WheelColliderLeftFront;
-    public WheelCollider WheelColliderRightFront;
-    public WheelCollider WheelColliderLeftBack;
-    public WheelCollider WheelColliderRightBack;
+    public WheelCollider WheelColliderFrontLeft;
+    public WheelCollider WheelColliderFrontRight;
+    public WheelCollider WheelColliderBackLeft;
+    public WheelCollider WheelColliderBackRight;
 
-    public Transform wheelLeftFront;
-    public Transform wheelRightFront;
-    public Transform wheelLeftBack;
-    public Transform wheelRightBack;
+    public Transform wheelFrontLeft;
+    public Transform wheelFrontRight;
+    public Transform wheelBackLeft;
+    public Transform wheelBackRight;
 
     public float motorTorque = 100f;
     public float maxSteer = 20f;
@@ -29,8 +29,8 @@ public class CarMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        WheelColliderLeftBack.motorTorque = Input.GetAxis("Vertical") * motorTorque;
-        WheelColliderRightBack.motorTorque = Input.GetAxis("Vertical") * motorTorque;
+        WheelColliderBackLeft.motorTorque = Input.GetAxis("Vertical") * motorTorque;
+        WheelColliderBackRight.motorTorque = Input.GetAxis("Vertical") * motorTorque;
         
     }
 
@@ -40,12 +40,12 @@ public class CarMovement : MonoBehaviour
         var pos = Vector3.zero;
         var rot = Quaternion.identity;
 
-        WheelColliderLeftFront.GetWorldPose(out pos, out rot);
+        /*WheelColliderLeftFront.GetWorldPose(out pos, out rot);
         wheelLeftFront.position = pos;
         wheelLeftFront.rotation = rot;
         
         WheelColliderRightFront.GetWorldPose(out pos, out rot);
         wheelRightFront.position = pos;
-        wheelRightFront.rotation = rot;
+        wheelRightFront.rotation = rot;*/
     }
 }
