@@ -17,8 +17,8 @@ TagManager:
   - Track
   - WheelColliders
   - Car
-  - 
-  - 
+  - CarBoxCollider
+  - Checkpoint
   - 
   - 
   - 

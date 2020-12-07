@@ -12,11 +12,11 @@ public class Player : MonoBehaviour
     public float CurrentLap = 0;
 
     private float lapStartTime;
-    private int lastCheckPointPassed = 0;
+    public int lastCheckPointPassed = 0;
 
     private Transform checkpointsParent;
 
-    private int checkpointCount;
+    public int checkpointCount;
     //private checkpointLayer;
 
     void Start()

@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public Text UITextCurrentTime;
     public Text UITextLastLap;
     public Text UITextBestLap;
+    public Text UITextCheckpoint;
 
     public Player UpdateUIForPlayer;
     // Start is called before the first frame update
@@ -26,5 +27,6 @@ public class UIController : MonoBehaviour
         UITextCurrentTime.text = $"Zeit: {UpdateUIForPlayer.CurrentLapTime}s";
         UITextLastLap.text = $"Letzte Rundenzeit: {UpdateUIForPlayer.LastLapTime}s";
         UITextBestLap.text = $"Bestzeit: {UpdateUIForPlayer.BestLapTime}s";
+        UITextCheckpoint.text = $"Checkpoint: {UpdateUIForPlayer.lastCheckPointPassed}/{UpdateUIForPlayer.checkpointCount}";
     }
 }
