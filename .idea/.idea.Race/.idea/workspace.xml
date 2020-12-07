@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc2e07a4-c15f-4d12-a3de-e2e62639921d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Player.cs" afterDir="false" />
-    </list>
+    <list default="true" id="bc2e07a4-c15f-4d12-a3de-e2e62639921d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,8 +35,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Code/Car/CarMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Code/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/UIController.cs" />
       </list>
     </option>
   </component>
@@ -85,7 +83,7 @@
       <workItem from="1599645346849" duration="3201000" />
       <workItem from="1599661188523" duration="1185000" />
       <workItem from="1599680821804" duration="2092000" />
-      <workItem from="1607350941354" duration="7065000" />
+      <workItem from="1607350941354" duration="7784000" />
     </task>
     <servers />
   </component>
