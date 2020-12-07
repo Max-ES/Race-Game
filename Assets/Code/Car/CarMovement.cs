@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class CarMovement : MonoBehaviour
     public float motorTorque = 100f;
     public float maxSteerAngle = 20f;
 
+    public Button resetButton;
     private void Awake()
     {
         
@@ -24,7 +26,19 @@ public class CarMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resetButton.onClick.AddListener(resetCarPosition);
+    }
 
+    void resetCarPosition()
+    {
+        print("reset");
+        Vector3 a = transform.localRotation.eulerAngles;
+        a.x = 0;
+        a.y = Mathf.Repeat(a.y + Input.GetAxis("Horizontal") * 5f, 360f);
+        a.z = 0;
+        transform.localRotation = Quaternion.Euler(a);
+
+        transform.Translate(0, 10, 0);
     }
     
     private void FixedUpdate()
