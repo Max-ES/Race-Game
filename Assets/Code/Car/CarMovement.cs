@@ -18,10 +18,12 @@ public class CarMovement : MonoBehaviour
     public float motorTorque = 100f;
     public float maxSteerAngle = 20f;
 
+    public Transform centerOfMass;
+
     public Button resetButton;
     private void Awake()
     {
-        //TODO: set center of mass
+        GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
     }
     void Start()
     {
