@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc2e07a4-c15f-4d12-a3de-e2e62639921d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Race/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Race/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Car/CarMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Car/CarMovement.cs" afterDir="false" />
-    </list>
+    <list default="true" id="bc2e07a4-c15f-4d12-a3de-e2e62639921d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +84,7 @@
       <workItem from="1599661188523" duration="1185000" />
       <workItem from="1599680821804" duration="2092000" />
       <workItem from="1607350941354" duration="8871000" />
-      <workItem from="1607426264259" duration="4599000" />
+      <workItem from="1607426264259" duration="5093000" />
     </task>
     <servers />
   </component>

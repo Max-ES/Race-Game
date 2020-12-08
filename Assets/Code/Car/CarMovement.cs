@@ -19,15 +19,13 @@ public class CarMovement : MonoBehaviour
     public float maxSteerAngle = 20f;
 
     public Transform centerOfMass;
-
-    public Button resetButton;
+    
     private void Awake()
     {
         GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
     }
     void Start()
     {
-        resetButton.onClick.AddListener(resetCarPosition);
     }
 
     void resetCarPosition()

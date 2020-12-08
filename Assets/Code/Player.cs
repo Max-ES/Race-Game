@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -15,9 +16,13 @@ public class Player : MonoBehaviour
 
     public int checkpointCount;
 
+    public Button resetButton;
+    
     void Start()
     {
         checkpointCount = GameObject.Find("Checkpoints").transform.childCount;
+        resetButton.onClick.AddListener(resetCarPosition);
+
     }
 
     void Update()
