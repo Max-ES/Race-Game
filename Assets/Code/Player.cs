@@ -20,8 +20,7 @@ public class Player : MonoBehaviour
     private Rigidbody _carBody;
 
     public Button resetButton;
-    
-    
+
 
     void Start()
     {
@@ -37,8 +36,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider colliderObject)
     {
-        print(colliderObject);
-        if (colliderObject.gameObject.name == "0")
+        var checkPointPassed = colliderObject.gameObject;
+        // if passed first/last checkpoint
+        if (GameObject.ReferenceEquals(checkPointPassed, checkpoints[0]))
         {
             if (lastCheckPointPassed == checkpointCount - 1)
             {
@@ -49,8 +49,8 @@ public class Player : MonoBehaviour
             {
                 NewLap();
             }
-        }
-        else if (colliderObject.gameObject.name == (lastCheckPointPassed + 1).ToString())
+        } // else if passed lastCheckpoint+1
+        else if (GameObject.ReferenceEquals(checkPointPassed, checkpoints[lastCheckPointPassed + 1]))
         {
             lastCheckPointPassed++;
         }
@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
         transform.localRotation = Quaternion.Euler(a);
 
         var lastCheckpoint = GetLastPassedCheckpoint();
-        
+
         transform.position = lastCheckpoint.transform.position;
         transform.rotation = lastCheckpoint.transform.rotation;
         _carBody.velocity = Vector3.zero;
