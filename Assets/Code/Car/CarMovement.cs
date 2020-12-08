@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
-    public WheelCollider WheelColliderFrontLeft;
-    public WheelCollider WheelColliderFrontRight;
-    public WheelCollider WheelColliderBackLeft;
-    public WheelCollider WheelColliderBackRight;
+    public WheelCollider wheelColliderFrontLeft;
+    public WheelCollider wheelColliderFrontRight;
+    public WheelCollider wheelColliderBackLeft;
+    public WheelCollider wheelColliderBackRight;
 
     public Transform wheelFrontLeft;
     public Transform wheelFrontRight;
@@ -21,9 +21,8 @@ public class CarMovement : MonoBehaviour
     public Button resetButton;
     private void Awake()
     {
-        
+        //TODO: set center of mass
     }
-    // Start is called before the first frame update
     void Start()
     {
         resetButton.onClick.AddListener(resetCarPosition);
@@ -44,22 +43,21 @@ public class CarMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // controls the speed
-        WheelColliderBackLeft.motorTorque = Input.GetAxis("Vertical") * motorTorque;
-        WheelColliderBackRight.motorTorque = Input.GetAxis("Vertical") * motorTorque;
+        wheelColliderBackLeft.motorTorque = Input.GetAxis("Vertical") * motorTorque;
+        wheelColliderBackRight.motorTorque = Input.GetAxis("Vertical") * motorTorque;
         //controls the direction
-        WheelColliderFrontLeft.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
-        WheelColliderFrontRight.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
+        wheelColliderFrontLeft.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
+        wheelColliderFrontRight.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         //turning the wheels
         var pos = Vector3.zero;
         var rot = Quaternion.identity;
-        WheelColliderFrontLeft.GetWorldPose(out pos, out rot);
+        wheelColliderFrontLeft.GetWorldPose(out pos, out rot);
         wheelFrontLeft.rotation = rot;
-        WheelColliderFrontRight.GetWorldPose(out pos, out rot);
+        wheelColliderFrontRight.GetWorldPose(out pos, out rot);
         wheelFrontRight.rotation = rot;
     }
 }

@@ -5,68 +5,55 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float BestLapTime { get; private set; } = 9999999;
     public float LastLapTime { get; private set; } = 0;
     public float CurrentLapTime { get; private set; } = 0;
-    public float CurrentLap = 0;
+    public float currentLap = 0;
 
-    private float lapStartTime;
+    private float _lapStartTime;
     public int lastCheckPointPassed = 0;
 
-    private Transform checkpointsParent;
-
     public int checkpointCount;
-    //private checkpointLayer;
 
     void Start()
     {
-        checkpointsParent = GameObject.Find("Checkpoints").transform;
-        checkpointCount = checkpointsParent.childCount;
-        //checkpointLayer = LayerMask.NameToLayer("Checkpoint");
-
-        //CharacterController = GetComponent(<CarController>)
+        checkpointCount = GameObject.Find("Checkpoints").transform.childCount;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        CurrentLapTime = lapStartTime > 0 ? Time.time - lapStartTime : 0;
+        CurrentLapTime = _lapStartTime > 0 ? Time.time - _lapStartTime : 0;
     }
 
-    void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider colliderObject)
     {
-        print(collider);
-        if (collider.gameObject.name == "0")
+        print(colliderObject);
+        if (colliderObject.gameObject.name == "0")
         {
             if (lastCheckPointPassed == checkpointCount - 1)
             {
-                lapFinished();
-                newLap();
-            } else if (CurrentLap == 0)
+                LapFinished();
+                NewLap();
+            } else if (currentLap == 0)
             {
-                newLap();
+                NewLap();
             }
-        } else if (collider.gameObject.name == (lastCheckPointPassed + 1).ToString())
+        } else if (colliderObject.gameObject.name == (lastCheckPointPassed + 1).ToString())
         {
             lastCheckPointPassed++;
         }
-
-        print(lastCheckPointPassed);
     }
 
-    void newLap()
+    private void NewLap()
     {
-        print("new lap");
-        CurrentLap++;
+        currentLap++;
         lastCheckPointPassed = 0;
-        lapStartTime = Time.time;
+        _lapStartTime = Time.time;
     }
 
-    void lapFinished()
+    private void LapFinished()
     {
-        print("finished lap");
-        LastLapTime = Time.time - lapStartTime;
+        LastLapTime = Time.time - _lapStartTime;
         BestLapTime = Mathf.Min(BestLapTime, LastLapTime);
     }
 }
