@@ -24,22 +24,7 @@ public class CarMovement : MonoBehaviour
     {
         GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
     }
-    void Start()
-    {
-    }
 
-    void resetCarPosition()
-    {
-        print("reset");
-        Vector3 a = transform.localRotation.eulerAngles;
-        a.x = 0;
-        a.y = Mathf.Repeat(a.y + Input.GetAxis("Horizontal") * 5f, 360f);
-        a.z = 0;
-        transform.localRotation = Quaternion.Euler(a);
-
-        transform.Translate(0, 10, 0);
-    }
-    
     private void FixedUpdate()
     {
         // controls the speed

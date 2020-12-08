@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,14 +16,18 @@ public class Player : MonoBehaviour
     public int lastCheckPointPassed = 0;
 
     public int checkpointCount;
+    [SerializeField] private List<GameObject> checkpoints;
+    private Rigidbody _carBody;
 
     public Button resetButton;
     
+    
+
     void Start()
     {
-        checkpointCount = GameObject.Find("Checkpoints").transform.childCount;
-        resetButton.onClick.AddListener(resetCarPosition);
-
+        checkpointCount = checkpoints.Count;
+        resetButton.onClick.AddListener(ResetCarPositionToLastCheckpoint);
+        _carBody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -39,11 +44,13 @@ public class Player : MonoBehaviour
             {
                 LapFinished();
                 NewLap();
-            } else if (currentLap == 0)
+            }
+            else if (currentLap == 0)
             {
                 NewLap();
             }
-        } else if (colliderObject.gameObject.name == (lastCheckPointPassed + 1).ToString())
+        }
+        else if (colliderObject.gameObject.name == (lastCheckPointPassed + 1).ToString())
         {
             lastCheckPointPassed++;
         }
@@ -60,5 +67,26 @@ public class Player : MonoBehaviour
     {
         LastLapTime = Time.time - _lapStartTime;
         BestLapTime = Mathf.Min(BestLapTime, LastLapTime);
+    }
+
+    private void ResetCarPositionToLastCheckpoint()
+    {
+        print("reset");
+        Vector3 a = transform.localRotation.eulerAngles;
+        a.x = 0;
+        a.y = Mathf.Repeat(a.y + Input.GetAxis("Horizontal") * 5f, 360f);
+        a.z = 0;
+        transform.localRotation = Quaternion.Euler(a);
+
+        var lastCheckpoint = GetLastPassedCheckpoint();
+        
+        transform.position = lastCheckpoint.transform.position;
+        transform.rotation = lastCheckpoint.transform.rotation;
+        _carBody.velocity = Vector3.zero;
+    }
+
+    private GameObject GetLastPassedCheckpoint()
+    {
+        return checkpoints[lastCheckPointPassed];
     }
 }
