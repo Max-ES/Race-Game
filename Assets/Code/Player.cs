@@ -28,7 +28,9 @@ public class Player : MonoBehaviour
         checkpointCount = checkpoints.Count;
         resetButton.onClick.AddListener(ResetCarPositionToLastCheckpoint);
         _carBody = GetComponent<Rigidbody>();
-        InvokeRepeating(nameof(CheckIfWrongDirection), 0, 1);
+        InvokeRepeating(nameof(CheckIfWrongDirection), 0,
+            1); // only check every second if the player is driving in the wrong direction to save performance
+        BestLapTime = save.GetBestTime();
     }
 
     void Update()
@@ -69,6 +71,7 @@ public class Player : MonoBehaviour
     {
         LastLapTime = Time.time - _lapStartTime;
         BestLapTime = Mathf.Min(BestLapTime, LastLapTime);
+        save.SaveBestTime((BestLapTime));
     }
 
     private void CheckIfWrongDirection()

@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc2e07a4-c15f-4d12-a3de-e2e62639921d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Race/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Race/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Race/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Race/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UIController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Code/save.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/UIController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -40,6 +41,7 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Code/Car/CarMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/save.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player.cs" />
       </list>
     </option>
@@ -88,7 +90,7 @@
       <workItem from="1599661188523" duration="1185000" />
       <workItem from="1599680821804" duration="2092000" />
       <workItem from="1607350941354" duration="8871000" />
-      <workItem from="1607426264259" duration="13462000" />
+      <workItem from="1607426264259" duration="15518000" />
     </task>
     <servers />
   </component>
