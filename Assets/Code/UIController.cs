@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI uITextLastLap;
     public TextMeshProUGUI uITextBestLap;
     public TextMeshProUGUI uITextCheckpoint;
+    public TextMeshProUGUI uITextWrongDirection;
 
     public Player updateUIForPlayer;
 
@@ -21,5 +22,6 @@ public class UIController : MonoBehaviour
         uITextLastLap.text = $"Letzte Rundenzeit: {updateUIForPlayer.LastLapTime}s";
         uITextBestLap.text = $"Bestzeit: {updateUIForPlayer.BestLapTime}s";
         uITextCheckpoint.text = $"Checkpoint: {updateUIForPlayer.lastCheckPointPassed}/{updateUIForPlayer.checkpointCount}";
+        uITextWrongDirection.gameObject.SetActive(updateUIForPlayer.WrongDirection);
     }
 }

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float BestLapTime { get; private set; } = 9999999;
     public float LastLapTime { get; private set; } = 0;
     public float CurrentLapTime { get; private set; } = 0;
+    public bool WrongDirection { get; private set; } = false;
     public float currentLap = 0;
 
     private float _lapStartTime;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
         checkpointCount = checkpoints.Count;
         resetButton.onClick.AddListener(ResetCarPositionToLastCheckpoint);
         _carBody = GetComponent<Rigidbody>();
+        InvokeRepeating(nameof(CheckIfWrongDirection), 0, 1);
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour
             {
                 NewLap();
             }
-        } // else if passed lastCheckpoint+1
+        } // else if passed lastCheckpoint+1 (the right next one)
         else if (GameObject.ReferenceEquals(checkPointPassed, checkpoints[lastCheckPointPassed + 1]))
         {
             lastCheckPointPassed++;
@@ -69,9 +71,16 @@ public class Player : MonoBehaviour
         BestLapTime = Mathf.Min(BestLapTime, LastLapTime);
     }
 
+    private void CheckIfWrongDirection()
+    {
+        var nextCheckpoint = GetNextCheckpoint();
+        var targetDir = nextCheckpoint.transform.position - transform.position;
+        var angle = Vector3.Angle(targetDir, transform.forward);
+        WrongDirection = angle > 110.0f;
+    }
+
     private void ResetCarPositionToLastCheckpoint()
     {
-        print("reset");
         Vector3 a = transform.localRotation.eulerAngles;
         a.x = 0;
         a.y = Mathf.Repeat(a.y + Input.GetAxis("Horizontal") * 5f, 360f);
@@ -88,5 +97,11 @@ public class Player : MonoBehaviour
     private GameObject GetLastPassedCheckpoint()
     {
         return checkpoints[lastCheckPointPassed];
+    }
+
+    private GameObject GetNextCheckpoint()
+    {
+        var index = lastCheckPointPassed == checkpoints.Count - 1 ? 0 : lastCheckPointPassed + 1;
+        return checkpoints[index];
     }
 }
