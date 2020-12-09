@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<GameObject> checkpoints;
     private Rigidbody _carBody;
 
-    public Button resetButton;
+    [SerializeField] private Button resetButton;
 
 
     void Start()

@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    public TextMeshProUGUI uITextCurrentLap;
-    public TextMeshProUGUI uITextCurrentTime;
-    public TextMeshProUGUI uITextLastLap;
-    public TextMeshProUGUI uITextBestLap;
-    public TextMeshProUGUI uITextCheckpoint;
-    public TextMeshProUGUI uITextWrongDirection;
+    [SerializeField] private TextMeshProUGUI uITextCurrentLap;
+    [SerializeField] private TextMeshProUGUI uITextCurrentTime;
+    [SerializeField] private TextMeshProUGUI uITextLastLap;
+    [SerializeField] private TextMeshProUGUI uITextBestLap;
+    [SerializeField] private TextMeshProUGUI uITextCheckpoint;
+    [SerializeField] private TextMeshProUGUI uITextWrongDirection;
 
     public Player updateUIForPlayer;
 
@@ -21,7 +21,8 @@ public class UIController : MonoBehaviour
         uITextCurrentTime.text = $"Zeit: {updateUIForPlayer.CurrentLapTime}s";
         uITextLastLap.text = $"Letzte Rundenzeit: {updateUIForPlayer.LastLapTime}s";
         uITextBestLap.text = $"Bestzeit: {updateUIForPlayer.BestLapTime}s";
-        uITextCheckpoint.text = $"Checkpoint: {updateUIForPlayer.lastCheckPointPassed}/{updateUIForPlayer.checkpointCount}";
+        uITextCheckpoint.text =
+            $"Checkpoint: {updateUIForPlayer.lastCheckPointPassed}/{updateUIForPlayer.checkpointCount}";
         uITextWrongDirection.gameObject.SetActive(updateUIForPlayer.WrongDirection);
     }
 }

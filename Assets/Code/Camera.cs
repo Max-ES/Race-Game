@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    public Transform Target;
+    [SerializeField] private Transform target;
 
-    public Vector3 offset;
-    public Vector3 eulerRotation;
-    public float damper;
-    
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private Vector3 eulerRotation;
+    [SerializeField] private float damper;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Target == null) return;
-        transform.position = Vector3.Lerp(transform.position, Target.position + offset, damper * Time.deltaTime);
+        if (target == null) return;
+        transform.position = Vector3.Lerp(transform.position, target.position + offset, damper * Time.deltaTime);
     }
 }

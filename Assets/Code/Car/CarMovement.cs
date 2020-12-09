@@ -5,21 +5,21 @@ using UnityEngine.UI;
 
 public class CarMovement : MonoBehaviour
 {
-    public WheelCollider wheelColliderFrontLeft;
-    public WheelCollider wheelColliderFrontRight;
-    public WheelCollider wheelColliderBackLeft;
-    public WheelCollider wheelColliderBackRight;
+    [SerializeField] private WheelCollider wheelColliderFrontLeft;
+    [SerializeField] private WheelCollider wheelColliderFrontRight;
+    [SerializeField] private WheelCollider wheelColliderBackLeft;
+    [SerializeField] private WheelCollider wheelColliderBackRight;
 
-    public Transform wheelFrontLeft;
-    public Transform wheelFrontRight;
-    public Transform wheelBackLeft;
-    public Transform wheelBackRight;
+    [SerializeField] private Transform wheelFrontLeft;
+    [SerializeField] private Transform wheelFrontRight;
+    [SerializeField] private Transform wheelBackLeft;
+    [SerializeField] private Transform wheelBackRight;
 
-    public float motorTorque = 100f;
-    public float maxSteerAngle = 20f;
+    [SerializeField] private float motorTorque = 100f;
+    [SerializeField] private float maxSteerAngle = 20f;
 
-    public Transform centerOfMass;
-    
+    [SerializeField] private Transform centerOfMass;
+
     private void Awake()
     {
         GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
@@ -34,7 +34,7 @@ public class CarMovement : MonoBehaviour
         wheelColliderFrontLeft.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
         wheelColliderFrontRight.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
     }
-    
+
     void Update()
     {
         //turning the wheels
