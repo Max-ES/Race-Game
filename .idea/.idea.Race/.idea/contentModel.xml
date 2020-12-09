@@ -4,9 +4,15 @@
     <e p="C:\dev\race\race" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Car Engine Sound - Rotary x8 Free" t="Include">
+          <e p="Assets for Realistic Engine Sounds" t="Include">
+            <e p="ReadMe.txt" t="Include" />
+          </e>
+        </e>
         <e p="Code" t="Include">
           <e p="Camera.cs" t="Include" />
           <e p="Car" t="Include">
+            <e p="CarEngine.cs" t="Include" />
             <e p="CarMovement.cs" t="Include" />
           </e>
           <e p="Player.cs" t="Include" />

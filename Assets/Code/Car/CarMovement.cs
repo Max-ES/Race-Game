@@ -20,9 +20,14 @@ public class CarMovement : MonoBehaviour
 
     [SerializeField] private Transform centerOfMass;
 
+    private Rigidbody carBody;
+
+    public float Speed { get; private set; } = 0;
+
     private void Awake()
     {
-        GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
+        carBody = GetComponent<Rigidbody>();
+        carBody.centerOfMass = centerOfMass.localPosition;
     }
 
     private void FixedUpdate()
@@ -33,6 +38,8 @@ public class CarMovement : MonoBehaviour
         //controls the direction
         wheelColliderFrontLeft.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
         wheelColliderFrontRight.steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
+        //calc current speed (used for car engine sound)
+        Speed = carBody.velocity.magnitude;
     }
 
     void Update()
