@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc2e07a4-c15f-4d12-a3de-e2e62639921d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Race/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Race/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Race/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Race/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Car/CarMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Car/CarMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Race/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Race/.idea/indexLayout.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +38,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Code/save.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Camera.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Car/CarMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Code/Car/CarEngine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Code/save.cs" />
       </list>
     </option>
   </component>
@@ -103,6 +101,7 @@
       <workItem from="1607350941354" duration="8871000" />
       <workItem from="1607426264259" duration="15518000" />
       <workItem from="1607517864854" duration="5867000" />
+      <workItem from="1608477558339" duration="147000" />
     </task>
     <servers />
   </component>
