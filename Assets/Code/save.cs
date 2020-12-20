@@ -22,7 +22,6 @@ public static class save
         if (File.Exists(destination)) file = File.OpenRead(destination);
         else
         {
-            Debug.LogError("File not found");
             return 9999999;
         }
 
@@ -30,7 +29,6 @@ public static class save
         float bestTime =(float) bf.Deserialize(file);
         file.Close();
 
-        Debug.Log(bestTime);
         return bestTime;
     }
 }
